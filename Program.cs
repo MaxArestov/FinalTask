@@ -8,6 +8,8 @@ int num = GetNumber();
 string[] arrayStrings = new string[num];
 FillArray(arrayStrings);
 PrintArray(arrayStrings);
+string[] newArr = GetArrayThreeLength(arrayStrings);
+PrintArray(newArr);
 
 
 
@@ -58,14 +60,13 @@ string[] GetArrayThreeLength(string[] arr)
         }
     }
     string[] newArray = new string[newNumber];
+    int j = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        for (int j = 0; j < newArray.Length; j++)
+        if (arr[i].Length <= 3)
         {
-            if (arr[i].Length <= 3)
-            {
-                newArray[j] = arr[i];
-            }
+            newArray[j] = arr[i];
+            j++;
         }
     }
     return newArray;
