@@ -6,7 +6,7 @@ Console.Clear();
 Console.WriteLine("Введите число, означающее количество элементов массива строк:");
 int num = GetNumber();
 string[] arrayStrings = new string[num];
-
+FillArray(arrayStrings);
 
 
 
@@ -25,4 +25,21 @@ int GetNumber()
         else check = false;
     }
     return number;
+}
+
+void FillArray(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.WriteLine($"Введите {i} элемент:");
+        arr[i] = Console.ReadLine().ToString();
+    }
+}
+
+void PrintArray(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"{arr[i]} ");
+    }
 }
